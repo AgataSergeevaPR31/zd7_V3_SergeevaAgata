@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hotel.MainPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="style.css" />
+    </ContentPage.Resources>
+    <StackLayout>
+        <StackLayout Padding="20">
+            <Label Text="Количество человек:" />
+            <Entry x:Name="PeopleCountEntry" Keyboard="Numeric" />
+
+            <Label Text="Количество комнат (не более 4):" />
+            <Entry x:Name="RoomCountEntry" Keyboard="Numeric" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Есть ли пенсионеры или дети?" />
+                <Switch x:Name="chch" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Многодетная ли семья?" />
+                <Switch x:Name="fafa" />
+            </StackLayout>
+
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                <Button Text="На главную страницу" StyleClass="button"
+                    Clicked="OnMainPageButtonClicked" />
+                <Button Text="Расчет стоимости" StyleClass="button"
+                    Clicked="OnCalculateCostButtonClicked" />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

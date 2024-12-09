@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  
+    xmlns="http://xamarin.com/schemas/2014/forms"  
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+    x:Class="Hotel.Registration">
+    <ContentPage.Resources>
+        <StyleSheet Source="style.css" />
+    </ContentPage.Resources>
+    <StackLayout StyleId="body" Margin = "20">
+        <Label x:Name="header" StyleId="header" HorizontalOptions="Center" Text="ГОСТИНИЦА"/>
+        <Entry x:Name="Login" Placeholder="Логин"  StyleClass="entries" />
+        <Entry x:Name="Password" Placeholder="Пароль" IsPassword="True" StyleClass="entries"/>
+        <Button Text="Войти" StyleClass="button" Clicked="DDDD"/>
+
+    </StackLayout>
+</ContentPage>

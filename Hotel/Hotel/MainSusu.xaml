@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hotel.MainSusu">
+    <ContentPage.Resources>
+        <StyleSheet Source="style.css" />
+    </ContentPage.Resources>
+    <StackLayout Padding="10">
+        <Label Text="Онлайн-бронирование гостиниц"
+               FontSize="24"
+               FontAttributes="Italic"
+               TextColor="Blue"
+               HorizontalOptions="Center" />
+
+        <ListView x:Name="HotelListView"
+          ItemSelected="OnHotelSelected"
+          IsGroupingEnabled="False"
+          HeightRequest="600"
+          HasUnevenRows="True"
+          RowHeight="200">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10" VerticalOptions="StartAndExpand">
+                            <Image Source="{Binding ImageUrl}" WidthRequest="70" HeightRequest="70" />
+                            <StackLayout Padding="10" VerticalOptions="CenterAndExpand">
+                                <Label Text="{Binding Name}" FontSize="Medium" />
+                                <Label Text="{Binding Room, StringFormat='Кол-во номеров: {0:C}'}" FontSize="Small" />
+                                <Label Text="{Binding Phone, StringFormat='Телефон: {0:C}'}" FontSize="Small" />
+                                <Label Text="{Binding Address, StringFormat='Адрес: {0:C}'}" FontSize="Small" />
+                                <Label Text="{Binding Price, StringFormat='Цена: {0:C}'}" FontSize="Small" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label Text="Фамилия:" />
+        <Entry x:Name="LastNameEntry" Placeholder="Введите фамилию" />
+
+        <Label Text="Возраст:" />
+        <Entry x:Name="AgeEntry" Placeholder="Введите возраст" Keyboard="Numeric" />
+
+        <Label Text="Дата заезда:" />
+        <DatePicker x:Name="CheckInDatePicker" />
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,10,0,0">
+            <Button Text="Выбор количества мест" StyleClass="button" Clicked="OnSelectPlacesClicked" />
+            <Button Text="Расчет стоимости проживания" StyleClass="button" Clicked="OnCalculateCostClicked" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

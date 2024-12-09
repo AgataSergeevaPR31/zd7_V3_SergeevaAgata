@@ -1,0 +1,25 @@
+﻿
+ContentPage {
+    background-color: white;
+}
+
+#header {
+    color: blue;
+    font-size: 55;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial;
+    margin-bottom: 100;
+    margin-top: 50;
+}
+
+entries {
+    background-color: white;
+    border: thin solid black;
+}
+
+button {
+    background: blue;
+    color: white;
+    text-transform: none;
+}
